@@ -8,6 +8,7 @@ use Boesing\Expressive\Cors\Configuration\ConfigurationInterface;
 use Boesing\Expressive\Cors\Configuration\RouteConfigurationFactoryInterface;
 use Boesing\Expressive\Cors\Configuration\RouteConfigurationInterface;
 use Psr\Http\Message\ServerRequestFactoryInterface;
+use Zend\Expressive\Router\Route;
 use Zend\Expressive\Router\RouteResult;
 use Zend\Expressive\Router\RouterInterface;
 
@@ -64,11 +65,6 @@ final class ConfigurationLocator implements ConfigurationLocatorInterface
         return $configuration;
     }
 
-    /**
-     * @param CorsMetadata $metadata
-     *
-     * @return ConfigurationInterface|RouteConfigurationInterface
-     */
     private function configuration(CorsMetadata $metadata) : RouteConfigurationInterface
     {
         $request = $this->requestFactory->createServerRequest($metadata->requestedMethod, $metadata->requestedUri);
@@ -77,11 +73,6 @@ final class ConfigurationLocator implements ConfigurationLocatorInterface
         return $this->configurationFromRoute($result);
     }
 
-    /**
-     * @param RouteResult $result
-     *
-     * @return RouteConfigurationInterface|ConfigurationInterface
-     */
     private function configurationFromRoute(RouteResult $result) : RouteConfigurationInterface
     {
         $routeConfigurationFactory = $this->routeConfigurationFactory;
@@ -92,6 +83,9 @@ final class ConfigurationLocator implements ConfigurationLocatorInterface
         }
 
         $allowedMethods = $result->getAllowedMethods();
+        if ($allowedMethods === Route::HTTP_METHOD_ANY) {
+            $allowedMethods = CorsMetadata::ALLOWED_REQUEST_METHODS;
+        }
 
         $routeParameters = $result->getMatchedParams()[RouteConfigurationInterface::PARAMETER_IDENTIFIER] ?? null;
         if ($routeParameters === null) {

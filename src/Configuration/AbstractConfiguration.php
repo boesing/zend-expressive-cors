@@ -59,11 +59,12 @@ abstract class AbstractConfiguration implements ConfigurationInterface
         foreach ($data as $property => $value) {
             $property = lcfirst(str_replace('_', '', ucwords($property, '_')));
             $setter   = sprintf('set%s', ucfirst($property));
-            if (! is_callable([$this, $setter])) {
+            $callable = [$this, $setter];
+            if (! is_callable($callable)) {
                 throw BadMethodCallException::fromMissingSetterMethod($property, $setter);
             }
 
-            call_user_func([$this, $setter], $value);
+            call_user_func($callable, $value);
         }
 
         return $instance;

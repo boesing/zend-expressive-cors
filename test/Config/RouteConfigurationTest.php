@@ -24,12 +24,12 @@ final class RouteConfigurationTest extends TestCase
         ];
         $config = new RouteConfiguration($parameters);
 
-        $this->assertSame(false, $config->overridesProjectConfiguration());
+        $this->assertFalse($config->overridesProjectConfiguration());
         $this->assertSame(['foo'], $config->allowedOrigins());
         $this->assertSame([], $config->allowedMethods());
         $this->assertSame(['baz'], $config->allowedHeaders());
         $this->assertSame('123', $config->allowedMaxAge());
-        $this->assertSame(true, $config->credentialsAllowed());
+        $this->assertTrue($config->credentialsAllowed());
         $this->assertSame(['foo', 'bar', 'baz'], $config->exposedHeaders());
     }
 

@@ -13,7 +13,7 @@ final class InvalidOriginValueException extends RuntimeException implements Exce
 {
     private function __construct(string $message, ?Throwable $previous = null)
     {
-        parent::__construct($message);
+        parent::__construct($message, 0, $previous);
     }
 
     public static function fromThrowable(string $origin, Throwable $throwable) : self

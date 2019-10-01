@@ -11,9 +11,6 @@ use Boesing\Expressive\CorsTest\AbstractFactoryTest;
 final class ProjectConfigurationFactoryTest extends AbstractFactoryTest
 {
 
-    /**
-     * @return string[]
-     */
     protected function dependencies(): array
     {
         return [

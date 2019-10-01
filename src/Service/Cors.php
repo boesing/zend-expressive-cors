@@ -10,6 +10,7 @@ use InvalidArgumentException;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\UriFactoryInterface;
 use Psr\Http\Message\UriInterface;
+use Webmozart\Assert\Assert;
 
 use function strtoupper;
 use function trim;
@@ -62,8 +63,11 @@ final class Cors implements CorsInterface
 
     public function metadata(ServerRequestInterface $request) : CorsMetadata
     {
+        $origin = $this->origin($request);
+        Assert::isInstanceOf($origin, UriInterface::class);
+
         return new CorsMetadata(
-            $this->origin($request),
+            $origin,
             $request->getUri(),
             strtoupper($request->getHeaderLine('Access-Control-Request-Method'))
         );
