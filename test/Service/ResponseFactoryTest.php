@@ -39,7 +39,7 @@ final class ResponseFactoryTest extends TestCase
         $this->psrResponseFactory
             ->expects($this->once())
             ->method('createResponse')
-            ->with(200, 'CORS Details')
+            ->with(204, 'CORS Details')
             ->willReturn($response);
 
         $methods = ['GET', 'POST', 'DELETE'];
@@ -91,7 +91,7 @@ final class ResponseFactoryTest extends TestCase
         $this->psrResponseFactory
             ->expects($this->once())
             ->method('createResponse')
-            ->with(200, 'CORS Details')
+            ->with(204, 'CORS Details')
             ->willReturn($response);
 
         $methods = ['GET'];

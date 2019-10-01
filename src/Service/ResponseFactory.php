@@ -23,7 +23,7 @@ final class ResponseFactory implements ResponseFactoryInterface
 
     public function preflight(string $origin, ConfigurationInterface $config) : ResponseInterface
     {
-        $response = $this->responseFactory->createResponse(200, 'CORS Details')
+        $response = $this->responseFactory->createResponse(204, 'CORS Details')
             ->withAddedHeader('Content-Length', '0')
             ->withAddedHeader('Access-Control-Allow-Origin', $origin)
             ->withAddedHeader('Access-Control-Allow-Methods', implode(', ', $config->allowedMethods()))
