@@ -76,8 +76,8 @@ abstract class AbstractConfiguration implements ConfigurationInterface
 
         $origins = array_values(array_unique($origins));
 
-        if (in_array('*', $origins, true)) {
-            $origins = ['*'];
+        if (in_array(ConfigurationInterface::ANY_ORIGIN, $origins, true)) {
+            $origins = [ConfigurationInterface::ANY_ORIGIN];
         }
 
         $this->allowedOrigins = $origins;
