@@ -18,7 +18,6 @@ final class ProjectConfigurationTest extends TestCase
     {
         $parameters = [
             'allowed_origins'     => ['foo'],
-            'allowed_methods'     => ['GET'],
             'allowed_headers'     => ['baz'],
             'allowed_max_age'     => '123',
             'credentials_allowed' => true,
@@ -27,7 +26,6 @@ final class ProjectConfigurationTest extends TestCase
         $config     = new ProjectConfiguration($parameters);
 
         $this->assertSame(['foo'], $config->allowedOrigins());
-        $this->assertSame(['GET'], $config->allowedMethods());
         $this->assertSame(['baz'], $config->allowedHeaders());
         $this->assertSame('123', $config->allowedMaxAge());
         $this->assertTrue($config->credentialsAllowed());
@@ -41,7 +39,6 @@ final class ProjectConfigurationTest extends TestCase
 
         $config = new ProjectConfiguration($camelCasedParameters);
         $this->assertSame(['foo'], $config->allowedOrigins());
-        $this->assertSame(['GET'], $config->allowedMethods());
         $this->assertSame(['baz'], $config->allowedHeaders());
         $this->assertSame('123', $config->allowedMaxAge());
         $this->assertTrue($config->credentialsAllowed());
@@ -52,11 +49,5 @@ final class ProjectConfigurationTest extends TestCase
     {
         $this->expectException(InvalidConfigurationException::class);
         new ProjectConfiguration(['foo' => 'bar']);
-    }
-
-    public function testWillThrowExceptionOnUnknownRequestMethod()
-    {
-        $this->expectException(InvalidConfigurationException::class);
-        new ProjectConfiguration(['request_methods' => ['whatever']]);
     }
 }

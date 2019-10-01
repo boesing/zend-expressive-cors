@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\CorsTest;
+namespace Boesing\Expressive\CorsTest\Middleware;
 
 use Boesing\Expressive\Cors\Configuration\ConfigurationInterface;
 use Boesing\Expressive\Cors\Configuration\RouteConfigurationInterface;
@@ -424,5 +424,65 @@ final class CorsMiddlewareTest extends TestCase
 
         $responseFromMiddleware = $this->middleware->process($request, $handler);
         $this->assertEquals($response, $responseFromMiddleware);
+    }
+
+    public function testWillDelegateUnknownRouteForPreflightRequestToRequestHandler()
+    {
+        $request  = $this->createMock(ServerRequestInterface::class);
+        $handler  = $this->createMock(RequestHandlerInterface::class);
+        $response = $this->createMock(ResponseInterface::class);
+
+        $handler
+            ->expects($this->once())
+            ->method('handle')
+            ->with($request)
+            ->willReturn($response);
+
+        $this->cors
+            ->expects($this->once())
+            ->method('isCorsRequest')
+            ->willReturn(true);
+
+        $this->cors
+            ->expects($this->once())
+            ->method('isPreflightRequest')
+            ->willReturn(true);
+
+        $this->configurationLocator
+            ->expects($this->once())
+            ->method('locate')
+            ->willReturn(null);
+
+        $this->middleware->process($request, $handler);
+    }
+
+    public function testWillDelegateUnknownRouteForRequestToRequestHandler()
+    {
+        $request  = $this->createMock(ServerRequestInterface::class);
+        $handler  = $this->createMock(RequestHandlerInterface::class);
+        $response = $this->createMock(ResponseInterface::class);
+
+        $handler
+            ->expects($this->once())
+            ->method('handle')
+            ->with($request)
+            ->willReturn($response);
+
+        $this->cors
+            ->expects($this->once())
+            ->method('isCorsRequest')
+            ->willReturn(true);
+
+        $this->cors
+            ->expects($this->once())
+            ->method('isPreflightRequest')
+            ->willReturn(false);
+
+        $this->configurationLocator
+            ->expects($this->once())
+            ->method('locate')
+            ->willReturn(null);
+
+        $this->middleware->process($request, $handler);
     }
 }

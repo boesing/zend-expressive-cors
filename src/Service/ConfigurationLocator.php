@@ -13,6 +13,7 @@ use Zend\Expressive\Router\RouteResult;
 use Zend\Expressive\Router\RouterInterface;
 
 use function array_diff;
+use function array_merge;
 
 final class ConfigurationLocator implements ConfigurationLocatorInterface
 {
@@ -43,17 +44,27 @@ final class ConfigurationLocator implements ConfigurationLocatorInterface
     /**
      * @inheritDoc
      */
-    public function locate(CorsMetadata $metadata) : ConfigurationInterface
+    public function locate(CorsMetadata $metadata) : ?ConfigurationInterface
     {
-        $configuration = $this->configuration($metadata);
-        if ($configuration->explicit()) {
-            return $configuration;
-        }
+        $factory       = $this->routeConfigurationFactory;
+        $configuration = $factory([])->mergeWithConfiguration($this->configuration);
 
-        $requestMethods = array_diff(CorsMetadata::ALLOWED_REQUEST_METHODS, [$metadata->requestedMethod]);
+        // Move the requested method to the top so it will be the first one tried to match
+        $requestMethods = array_merge([$metadata->requestedMethod], array_diff(
+            CorsMetadata::ALLOWED_REQUEST_METHODS,
+            [$metadata->requestedMethod]
+        ));
+
+        $anyRouteIsMatching = false;
         foreach ($requestMethods as $method) {
-            $request                    = $this->requestFactory->createServerRequest($method, $metadata->requestedUri);
-            $routeSpecificConfiguration = $this->configurationFromRoute($this->router->match($request));
+            $request = $this->requestFactory->createServerRequest($method, $metadata->requestedUri);
+            $route   = $this->router->match($request);
+            if ($route->isFailure()) {
+                continue;
+            }
+
+            $anyRouteIsMatching         = true;
+            $routeSpecificConfiguration = $this->configurationFromRoute($route);
 
             if ($routeSpecificConfiguration->explicit()) {
                 return $routeSpecificConfiguration;
@@ -62,37 +73,31 @@ final class ConfigurationLocator implements ConfigurationLocatorInterface
             $configuration = $configuration->mergeWithConfiguration($routeSpecificConfiguration);
         }
 
+        if (! $anyRouteIsMatching) {
+            return null;
+        }
+
         return $configuration;
-    }
-
-    private function configuration(CorsMetadata $metadata) : RouteConfigurationInterface
-    {
-        $request = $this->requestFactory->createServerRequest($metadata->requestedMethod, $metadata->requestedUri);
-        $result  = $this->router->match($request);
-
-        return $this->configurationFromRoute($result);
     }
 
     private function configurationFromRoute(RouteResult $result) : RouteConfigurationInterface
     {
-        $routeConfigurationFactory = $this->routeConfigurationFactory;
-
-        if ($result->isFailure()) {
-            return $routeConfigurationFactory([])
-                ->mergeWithConfiguration($this->configuration);
-        }
-
         $allowedMethods = $result->getAllowedMethods();
         if ($allowedMethods === Route::HTTP_METHOD_ANY) {
             $allowedMethods = CorsMetadata::ALLOWED_REQUEST_METHODS;
         }
 
+        $explicit                  = $this->explicit($allowedMethods);
+        $routeConfigurationFactory = $this->routeConfigurationFactory;
+
         $routeParameters = $result->getMatchedParams()[RouteConfigurationInterface::PARAMETER_IDENTIFIER] ?? null;
         if ($routeParameters === null) {
-            return $routeConfigurationFactory([])
+            return $routeConfigurationFactory(['explicit' => $explicit])
                 ->mergeWithConfiguration($this->configuration)
                 ->withRequestMethods($allowedMethods);
         }
+
+        $routeParameters = ['explicit' => $explicit] + $routeParameters;
 
         $routeConfiguration = $routeConfigurationFactory($routeParameters)
             ->withRequestMethods($allowedMethods);
@@ -102,5 +107,10 @@ final class ConfigurationLocator implements ConfigurationLocatorInterface
         }
 
         return $routeConfiguration->mergeWithConfiguration($this->configuration);
+    }
+
+    private function explicit(array $allowedMethods) : bool
+    {
+        return $allowedMethods === CorsMetadata::ALLOWED_REQUEST_METHODS;
     }
 }

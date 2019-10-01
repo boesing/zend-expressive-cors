@@ -55,7 +55,7 @@ final class CorsMiddleware implements MiddlewareInterface
 
         $metadata = $this->cors->metadata($request);
         if ($this->cors->isPreflightRequest($request)) {
-            return $this->preflight($metadata);
+            return $this->preflight($metadata) ?? $handler->handle($request);
         }
 
         return $this->cors($metadata, $request, $handler);
@@ -75,9 +75,12 @@ final class CorsMiddleware implements MiddlewareInterface
         return $response->withAddedHeader('Vary', $vary . ', Origin');
     }
 
-    private function preflight(CorsMetadata $metadata) : ResponseInterface
+    private function preflight(CorsMetadata $metadata) : ?ResponseInterface
     {
         $configurationToApply = $this->configurationLocator->locate($metadata);
+        if (! $configurationToApply) {
+            return null;
+        }
 
         return $this->responseFactory->preflight(
             $metadata->origin($configurationToApply),
@@ -91,7 +94,11 @@ final class CorsMiddleware implements MiddlewareInterface
         RequestHandlerInterface $handler
     ) : ResponseInterface {
         $configurationToApply = $this->configurationLocator->locate($metadata);
-        $origin               = $metadata->origin($configurationToApply);
+        if (! $configurationToApply) {
+            return $handler->handle($request);
+        }
+
+        $origin = $metadata->origin($configurationToApply);
 
         if ($origin === CorsMetadata::UNAUTHORIZED_ORIGIN) {
             return $this->responseFactory->unauthorized((string) $metadata->origin);

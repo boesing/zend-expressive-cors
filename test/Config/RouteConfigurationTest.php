@@ -86,7 +86,7 @@ final class RouteConfigurationTest extends TestCase
             ->withRequestMethods(['POST'])
             ->withRequestMethods(['HEAD', 'DELETE']);
 
-        $this->assertEquals(['GET', 'POST', 'HEAD', 'DELETE'], $routeConfiguration->allowedMethods());
+        $this->assertEquals(['DELETE', 'GET', 'HEAD', 'POST'], $routeConfiguration->allowedMethods());
     }
 
     public function testWillMergeMultipleConfigurations()

@@ -14,7 +14,7 @@ final class ProjectConfigurationFactoryTest extends AbstractFactoryTest
     protected function dependencies(): array
     {
         return [
-            'config' => [ConfigurationInterface::CONFIGURATION_IDENTIFIER => ['allowed_methods' => ['GET']]],
+            'config' => [ConfigurationInterface::CONFIGURATION_IDENTIFIER => ['exposed_headers' => ['X-Foo']]],
         ];
     }
 
@@ -30,6 +30,6 @@ final class ProjectConfigurationFactoryTest extends AbstractFactoryTest
     {
         $this->assertInstanceOf(ProjectConfiguration::class, $instance);
         /** @var ProjectConfiguration $instance */
-        $this->assertEquals(['GET'], $instance->allowedMethods());
+        $this->assertEquals(['X-Foo'], $instance->exposedHeaders());
     }
 }

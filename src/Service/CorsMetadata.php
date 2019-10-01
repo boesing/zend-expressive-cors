@@ -15,16 +15,17 @@ use function in_array;
 class CorsMetadata
 {
     public const ALLOWED_REQUEST_METHODS = [
-        RequestMethod::METHOD_HEAD,
+        RequestMethod::METHOD_DELETE,
         RequestMethod::METHOD_GET,
+        RequestMethod::METHOD_HEAD,
+        RequestMethod::METHOD_OPTIONS,
+        RequestMethod::METHOD_PATCH,
         RequestMethod::METHOD_POST,
         RequestMethod::METHOD_PUT,
-        RequestMethod::METHOD_PATCH,
-        RequestMethod::METHOD_DELETE,
-        RequestMethod::METHOD_OPTIONS,
         RequestMethod::METHOD_TRACE,
     ];
-    public const UNAUTHORIZED_ORIGIN     = 'null';
+
+    public const UNAUTHORIZED_ORIGIN = 'null';
 
     /** @var UriInterface */
     public $origin;

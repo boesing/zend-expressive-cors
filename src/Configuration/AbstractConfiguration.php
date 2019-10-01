@@ -6,7 +6,6 @@ namespace Boesing\Expressive\Cors\Configuration;
 
 use Boesing\Expressive\Cors\Configuration\Exception\InvalidConfigurationException;
 use Boesing\Expressive\Cors\Exception\BadMethodCallException;
-use Boesing\Expressive\Cors\Service\CorsMetadata;
 use Webmozart\Assert\Assert;
 
 use function array_unique;
@@ -140,17 +139,5 @@ abstract class AbstractConfiguration implements ConfigurationInterface
     public function allowedOrigins() : array
     {
         return $this->allowedOrigins;
-    }
-
-    /**
-     * @param array<int|string,string> $methods
-     *
-     * @return array<int,string>
-     */
-    protected function normalizeRequestMethods(array $methods) : array
-    {
-        Assert::allOneOf($methods, CorsMetadata::ALLOWED_REQUEST_METHODS);
-
-        return array_values(array_unique($methods));
     }
 }

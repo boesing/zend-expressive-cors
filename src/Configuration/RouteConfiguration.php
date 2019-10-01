@@ -4,8 +4,16 @@ declare(strict_types=1);
 
 namespace Boesing\Expressive\Cors\Configuration;
 
+use Boesing\Expressive\Cors\Service\CorsMetadata;
+use Webmozart\Assert\Assert;
+
 use function array_merge;
 use function array_unique;
+use function array_values;
+use function sort;
+
+use const SORT_ASC;
+use const SORT_STRING;
 
 final class RouteConfiguration extends AbstractConfiguration implements RouteConfigurationInterface
 {
@@ -70,11 +78,26 @@ final class RouteConfiguration extends AbstractConfiguration implements RouteCon
      */
     public function withRequestMethods(array $methods) : RouteConfigurationInterface
     {
-        $methods = $this->normalizeRequestMethods($methods);
+        $methods = $this->normalizeRequestMethods(array_merge($this->allowedMethods, $methods));
 
         $instance                 = clone $this;
-        $instance->allowedMethods = array_unique(array_merge($this->allowedMethods, $methods));
+        $instance->allowedMethods = $methods;
 
         return $instance;
+    }
+
+    /**
+     * @param array<int|string,string> $methods
+     *
+     * @return array<int,string>
+     */
+    private function normalizeRequestMethods(array $methods) : array
+    {
+        Assert::allOneOf($methods, CorsMetadata::ALLOWED_REQUEST_METHODS);
+
+        $methods = array_values(array_unique($methods));
+        sort($methods, SORT_ASC | SORT_STRING);
+
+        return $methods;
     }
 }
