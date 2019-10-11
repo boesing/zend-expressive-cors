@@ -196,7 +196,7 @@ final class CorsTest extends TestCase
         $this->assertTrue($this->cors->isPreflightRequest($request));
     }
 
-    public function testWillCreateProperMetadata(): void
+    public function testWillCreateMetadataForPreflightRequest(): void
     {
         $requestUri = $this->createMock(UriInterface::class);
         $requestUri
@@ -213,6 +213,47 @@ final class CorsTest extends TestCase
             ->method('getHeaderLine')
             ->withConsecutive(['Origin'],['Access-Control-Request-Method'])
             ->willReturnOnConsecutiveCalls('foo', 'get');
+
+        $this->uriFactory
+            ->expects($this->once())
+            ->method('createUri')
+            ->with('foo')
+            ->willReturn($originUri);
+
+        $request
+            ->expects($this->once())
+            ->method('getUri')
+            ->willReturn($requestUri);
+
+        $metadata = $this->cors->metadata($request);
+
+        $this->assertEquals($originUri, $metadata->origin);
+        $this->assertEquals($requestUri, $metadata->requestedUri);
+        $this->assertEquals('GET', $metadata->requestedMethod);
+    }
+
+    public function testWillCreateMetadataForCorsRequest(): void
+    {
+        $requestUri = $this->createMock(UriInterface::class);
+        $requestUri
+            ->expects($this->never())
+            ->method($this->anything());
+        $originUri = $this->createMock(UriInterface::class);
+        $originUri
+            ->expects($this->never())
+            ->method($this->anything());
+
+        $request = $this->createMock(ServerRequestInterface::class);
+        $request
+            ->expects($this->any())
+            ->method('getHeaderLine')
+            ->withConsecutive(['Origin'],['Access-Control-Request-Method'])
+            ->willReturnOnConsecutiveCalls('foo', '');
+
+        $request
+            ->expects($this->once())
+            ->method('getMethod')
+            ->willReturn('get');
 
         $this->uriFactory
             ->expects($this->once())
