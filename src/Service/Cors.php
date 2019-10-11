@@ -69,7 +69,7 @@ final class Cors implements CorsInterface
         return new CorsMetadata(
             $origin,
             $request->getUri(),
-            strtoupper($request->getHeaderLine('Access-Control-Request-Method'))
+            strtoupper($request->getHeaderLine('Access-Control-Request-Method') ?: $request->getMethod())
         );
     }
 }
