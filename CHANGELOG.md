@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 1.0.0rc2 - 2019-11-3
+
+### Added
+
+- Nothing.
+
+### Changed
+
+- Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- [#2](https://github.com/boesing/zend-expressive-cors/pull/2) Routes without own configuration duplicated the `allowedHeaders` configuration due to the merging process.
+
 ## 1.0.0rc1 - 2019-10-11
 
 ### Added
