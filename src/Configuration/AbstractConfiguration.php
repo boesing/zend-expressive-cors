@@ -90,7 +90,7 @@ abstract class AbstractConfiguration implements ConfigurationInterface
     public function setAllowedHeaders(array $headers) : void
     {
         Assert::allString($headers);
-        $this->allowedHeaders = $headers;
+        $this->allowedHeaders = array_values(array_unique($headers));
     }
 
     public function allowedHeaders() : array
