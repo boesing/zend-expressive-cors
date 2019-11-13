@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Boesing\Expressive\CorsTest\Config;
+namespace Boesing\Expressive\CorsTest\Configuration;
 
 use Boesing\Expressive\Cors\Configuration\RouteConfigurationFactory;
 use Boesing\Expressive\Cors\Configuration\RouteConfigurationFactoryFactory;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\CorsTest\Config;
+namespace Boesing\Expressive\CorsTest\Configuration;
 
 use Boesing\Expressive\Cors\Configuration\ConfigurationInterface;
 use Boesing\Expressive\Cors\Configuration\RouteConfiguration;
