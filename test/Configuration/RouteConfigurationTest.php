@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Boesing\Expressive\CorsTest\Configuration;
 
 use Boesing\Expressive\Cors\Configuration\ConfigurationInterface;
+use Boesing\Expressive\Cors\Configuration\ProjectConfiguration;
 use Boesing\Expressive\Cors\Configuration\RouteConfiguration;
 use function in_array;
 use PHPUnit\Framework\TestCase;
@@ -145,6 +146,14 @@ final class RouteConfigurationTest extends TestCase
         $this->assertEquals(['*'], $routeConfiguration->allowedOrigins());
         $this->assertEquals(['X-Another-Header','X-Special-Header'], $routeConfiguration->exposedHeaders());
         $this->assertEquals(['GET', 'POST'], $routeConfiguration->allowedMethods());
+    }
+
+    public function testWillMergeAllowedHeadersWithoutDuplicates()
+    {
+        $project = new ProjectConfiguration(['allowed_headers' => ['X-Foo']]);
+        $route = (new RouteConfiguration(['allowed_headers' => ['X-Foo']]));
+        $merged = $route->mergeWithConfiguration($project);
+        $this->assertEquals($merged->allowedHeaders(), ['X-Foo']);
     }
 
     public function testWillProvideExplicitFromParameters()
