@@ -72,7 +72,7 @@ final class CorsMiddleware implements MiddlewareInterface
             return $response;
         }
 
-        return $response->withAddedHeader('Vary', $vary . ', Origin');
+        return $response->withHeader('Vary', $vary . ', Origin');
     }
 
     private function preflight(CorsMetadata $metadata) : ?ResponseInterface
