@@ -22,7 +22,7 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Fixed
 
-- Nothing.
+- [#3](https://github.com/boesing/zend-expressive-cors/pull/3) Avoid duplicated `Vary` header.
 
 ## 1.0.0 - 2019-11-19
 
