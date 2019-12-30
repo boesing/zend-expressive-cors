@@ -162,7 +162,7 @@ final class CorsMiddlewareTest extends TestCase
 
         $response
             ->expects($this->once())
-            ->method('withAddedHeader')
+            ->method('withHeader')
             ->with('Vary', 'Accept, Origin')
             ->willReturn($response);
 
