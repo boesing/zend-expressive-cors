@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Added
 
-- Nothing.
+- [#4](https://github.com/boesing/zend-expressive-cors/pull/4) PHP 7.4 support. 
 
 ### Changed
 
