@@ -22,7 +22,7 @@ final class ResponseFactoryTest extends TestCase
      */
     private $psrResponseFactory;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->psrResponseFactory = $this->createMock(ResponseFactoryInterface::class);
@@ -58,7 +58,7 @@ final class ResponseFactoryTest extends TestCase
         $configuration
             ->expects($this->once())
             ->method('allowedMaxAge')
-            ->willReturn(0);
+            ->willReturn('0');
 
         $configuration
             ->expects($this->once())
@@ -110,7 +110,7 @@ final class ResponseFactoryTest extends TestCase
         $configuration
             ->expects($this->once())
             ->method('allowedMaxAge')
-            ->willReturn(0);
+            ->willReturn('0');
 
         $configuration
             ->expects($this->once())

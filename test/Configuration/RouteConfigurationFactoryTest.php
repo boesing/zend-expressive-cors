@@ -15,7 +15,7 @@ final class RouteConfigurationFactoryTest extends TestCase
      */
     private $factory;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->factory = new RouteConfigurationFactory();

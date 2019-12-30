@@ -273,7 +273,7 @@ final class CorsTest extends TestCase
         $this->assertEquals('GET', $metadata->requestedMethod);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

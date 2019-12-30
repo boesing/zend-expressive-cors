@@ -385,7 +385,7 @@ final class ConfigurationLocatorTest extends TestCase
         $this->assertSame($routeConfiguration, $locatedConfiguration);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->projectConfiguration = $this->createMock(ConfigurationInterface::class);

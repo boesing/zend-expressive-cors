@@ -31,7 +31,7 @@ abstract class AbstractFactoryTest extends TestCase
 
     abstract protected function factory(): callable;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->factory = $this->factory();
