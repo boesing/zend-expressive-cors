@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 1.0.1 - TBD
+## 1.1.0 - 2019-12-30
 
 ### Added
 
@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Changed
 
-- Nothing.
+- [#5](https://github.com/boesing/zend-expressive-cors/pull/5) Upgrade to PHPUnit v8
 
 ### Deprecated
 
