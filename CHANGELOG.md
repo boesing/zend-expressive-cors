@@ -34,7 +34,7 @@ Stable version `v1.0`
 
 ### Changed
 
-- Nothing.
+- [#5](https://github.com/boesing/zend-expressive-cors/pull/5) Updated PHPUnit to v8
 
 ### Deprecated
 
