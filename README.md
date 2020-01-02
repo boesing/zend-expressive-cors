@@ -39,7 +39,7 @@ There are 2 ways of configuring CORS in your project. Either create a global con
 On the project level, you can only configure the following Headers:
 
 | Configuration | Type | Header
-| ------------- |:-------------:| -----:
+|:-------------|:-------------:|:-----:
 | `allowed_origins` | string[] | Access-Control-Allow-Origin       
 | `allowed_headers` | string[] | Access-Control-Allow-Headers      
 | `allowed_max_age` | string (TTL in seconds) | Access-Control-Allowed-Max-Age    
@@ -51,7 +51,7 @@ On the route level, you can configure all of the projects configuration settings
 
 
 | Configuration | Type | Header
-| ------------- |:-------------:| -----:
+|:------------- |:-------------:|:-----:
 | `overrides_project_configuration` | bool | -
 | `explicit` | bool | -
 | `allowed_origins` | string[] | Access-Control-Allow-Origin       
@@ -153,7 +153,7 @@ return [
 Result of this configuration for the `CORS preflight` of `/foo` for the upcoming `GET` request will look like this:
 
 | Configuration | Parameter |
-| ------------- |:-------------:|
+|:------------- |:-------------:|
 | `allowed_origins` | `['someotherdomain.com']` |
 | `allowed_headers` | `['X-Specific-Header-For-Foo-Endpoint']` |
 | `allowed_max_age` | `3600` |
@@ -215,7 +215,7 @@ return [
 Result of this configuration for the `CORS preflight` of `/foo` for the upcoming `GET` request will look like this:
 
 | Configuration | Parameter |
-| ------------- |:-------------:|
+|:-------------|:-------------:|
 | `allowed_origins` | `[RouteConfigurationInterface::ANY_ORIGIN]` |
 | `allowed_headers` | `['X-Specific-Header-For-Foo-Endpoint', 'X-Project-Header']` |
 | `allowed_max_age` | `7200` |
