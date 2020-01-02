@@ -7,7 +7,7 @@ CORS subcomponent for [Expressive](https://github.com/zendframework/zend-express
 
 
 This extension creates CORS details for your application. If the `CorsMiddleware` detects a `CORS preflight`, the middleware will start do detect the proper `CORS` configuration.
-The `Router` is being used to detect every allowed request method by executing a route match with all possible request methods. Therefore, for every preflight request, there is at least one `Router` request (depending on the configuration of the route, it might be just one or we are executing a check for *every* request method).
+The `Router` is being used to detect every allowed request method by executing a route match with all possible request methods. Therefore, for every preflight request, there is at least one `Router` request (depending on the configuration of the route, it might be just one or we are executing a check for **every** request method).
 
 Here is a list of the request methods being checked for the `CORS preflight` information:
 
@@ -21,7 +21,7 @@ Here is a list of the request methods being checked for the `CORS preflight` inf
 - TRACE
 
 The order of the headers might vary, depending on what request method is being requested with the `CORS preflight` request.
-In the end, the response contains *every* possible request method of the route due to what the router tells the `ConfigurationLocator`.
+In the end, the response contains **every** possible request method of the route due to what the router tells the `ConfigurationLocator`.
 
 
 The allowed origins can be configured as strings which can be matched with [`fnmatch`](https://www.php.net/manual/en/function.fnmatch.php). Therefore, wildcards are possible.
@@ -162,7 +162,7 @@ Result of this configuration for the `CORS preflight` of `/foo` for the upcoming
 | `allowed_methods` | `['GET']` |
 
 
-*Did you note the missing `DELETE`? This is because of the `explicit` flag! Also note the empty `exposed_headers` which is due to the project overriding (`overrides_project_configuration`) parameter.*
+**Did you note the missing `DELETE`? This is because of the `explicit` flag! Also note the empty `exposed_headers` which is due to the project overriding (`overrides_project_configuration`) parameter.**
 
 
 #### Enable project merging
@@ -223,4 +223,4 @@ Result of this configuration for the `CORS preflight` of `/foo` for the upcoming
 | `credentials_allowed` | `true`|
 | `allowed_methods` | `['GET', 'DELETE']` |
 
-*Did you note the `ANY_ORIGIN` detail? This is, because if `ANY_ORIGIN` is allowed for an endpoint, we remove 
+**Did you note the `ANY_ORIGIN` detail? This is, because if `ANY_ORIGIN` is allowed for an endpoint, we remove** 
