@@ -121,7 +121,7 @@ return [
     ],
     'routes' => [
           [
-            'name' => 'foo',
+            'name' => 'foo-get',
             'path' => '/foo',
             'middleware' => [
                 // ...
@@ -139,7 +139,7 @@ return [
             'allowed_methods' => ['GET'],
         ],
         [
-            'name' => 'foo',
+            'name' => 'foo-delete',
             'path' => '/foo',
             'middleware' => [
                 // ...
@@ -182,7 +182,7 @@ return [
     ],
     'routes' => [
           [
-            'name' => 'foo',
+            'name' => 'foo-get',
             'path' => '/foo',
             'middleware' => [
                 // ...
@@ -201,7 +201,7 @@ return [
             'allowed_methods' => ['GET'],
         ],
         [
-            'name' => 'foo',
+            'name' => 'foo-delete',
             'path' => '/foo',
             'middleware' => [
                 // ...
