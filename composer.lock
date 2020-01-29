@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f1438151a6363f38796b128164a55bb4",
+    "content-hash": "764228a58fb9fd5284ebb4c2b9279726",
     "packages": [
         {
             "name": "fig/http-message-util",
@@ -55,6 +55,166 @@
                 "response"
             ],
             "time": "2017-02-09T16:10:21+00:00"
+        },
+        {
+            "name": "laminas/laminas-dependency-plugin",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-dependency-plugin.git",
+                "reference": "deeda02b6ea8494735de3d78effe65d671d0e513"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-dependency-plugin/zipball/deeda02b6ea8494735de3d78effe65d671d0e513",
+                "reference": "deeda02b6ea8494735de3d78effe65d671d0e513",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1",
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "composer/composer": "^1.9",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+                "phpcompatibility/php-compatibility": "^9.3",
+                "phpunit/phpunit": "^8.4",
+                "roave/security-advisories": "dev-master",
+                "webimpress/coding-standard": "^1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Laminas\\DependencyPlugin\\DependencyRewriterPlugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\DependencyPlugin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Replace zendframework and zfcampus packages with their Laminas Project equivalents.",
+            "time": "2019-12-02T16:44:48+00:00"
+        },
+        {
+            "name": "laminas/laminas-zendframework-bridge",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-zendframework-bridge.git",
+                "reference": "0fb9675b84a1666ab45182b6c5b29956921e818d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-zendframework-bridge/zipball/0fb9675b84a1666ab45182b6c5b29956921e818d",
+                "reference": "0fb9675b84a1666ab45182b6c5b29956921e818d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7 || ^6.5 || ^7.5 || ^8.1",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev",
+                    "dev-develop": "1.1.x-dev"
+                },
+                "laminas": {
+                    "module": "Laminas\\ZendFrameworkBridge"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/autoload.php"
+                ],
+                "psr-4": {
+                    "Laminas\\ZendFrameworkBridge\\": "src//"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Alias legacy ZF class names to Laminas Project equivalents.",
+            "keywords": [
+                "ZendFramework",
+                "autoloading",
+                "laminas",
+                "zf"
+            ],
+            "time": "2020-01-07T22:58:31+00:00"
+        },
+        {
+            "name": "mezzio/mezzio-router",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mezzio/mezzio-router.git",
+                "reference": "ebb387de4d606a4c775aaa0a8559d999765a1c29"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mezzio/mezzio-router/zipball/ebb387de4d606a4c775aaa0a8559d999765a1c29",
+                "reference": "ebb387de4d606a4c775aaa0a8559d999765a1c29",
+                "shasum": ""
+            },
+            "require": {
+                "fig/http-message-util": "^1.1.2",
+                "laminas/laminas-zendframework-bridge": "^1.0",
+                "php": "^7.1",
+                "psr/container": "^1.0",
+                "psr/http-message": "^1.0.1",
+                "psr/http-server-middleware": "^1.0"
+            },
+            "replace": {
+                "zendframework/zend-expressive-router": "self.version"
+            },
+            "require-dev": {
+                "laminas/laminas-coding-standard": "~1.0.0",
+                "malukenho/docheader": "^0.1.6",
+                "phpunit/phpunit": "^7.0.2"
+            },
+            "suggest": {
+                "mezzio/mezzio-aurarouter": "^3.0 to use the Aura.Router routing adapter",
+                "mezzio/mezzio-fastroute": "^3.0 to use the FastRoute routing adapter",
+                "mezzio/mezzio-laminasrouter": "^3.0 to use the laminas-router routing adapter"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1.x-dev",
+                    "dev-develop": "3.2.x-dev"
+                },
+                "laminas": {
+                    "config-provider": "Mezzio\\Router\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mezzio\\Router\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Router subcomponent for Mezzio",
+            "homepage": "https://mezzio.dev",
+            "keywords": [
+                "http",
+                "laminas",
+                "mezzio",
+                "middleware",
+                "psr",
+                "psr-7"
+            ],
+            "time": "2019-12-31T15:46:04+00:00"
         },
         {
             "name": "psr/container",
@@ -417,69 +577,6 @@
                 "validate"
             ],
             "time": "2019-08-24T08:43:50+00:00"
-        },
-        {
-            "name": "zendframework/zend-expressive-router",
-            "version": "3.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zendframework/zend-expressive-router.git",
-                "reference": "072d6b0620f7e1e616cb60062425b4eedd1a0447"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-expressive-router/zipball/072d6b0620f7e1e616cb60062425b4eedd1a0447",
-                "reference": "072d6b0620f7e1e616cb60062425b4eedd1a0447",
-                "shasum": ""
-            },
-            "require": {
-                "fig/http-message-util": "^1.1.2",
-                "php": "^7.1",
-                "psr/container": "^1.0",
-                "psr/http-message": "^1.0.1",
-                "psr/http-server-middleware": "^1.0"
-            },
-            "require-dev": {
-                "malukenho/docheader": "^0.1.6",
-                "phpunit/phpunit": "^7.0.2",
-                "zendframework/zend-coding-standard": "~1.0.0"
-            },
-            "suggest": {
-                "zendframework/zend-expressive-aurarouter": "^3.0 to use the Aura.Router routing adapter",
-                "zendframework/zend-expressive-fastroute": "^3.0 to use the FastRoute routing adapter",
-                "zendframework/zend-expressive-zendrouter": "^3.0 to use the zend-router routing adapter"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1.x-dev",
-                    "dev-develop": "3.2.x-dev"
-                },
-                "zf": {
-                    "config-provider": "Zend\\Expressive\\Router\\ConfigProvider"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Zend\\Expressive\\Router\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Router subcomponent for Expressive",
-            "keywords": [
-                "ZendFramework",
-                "expressive",
-                "http",
-                "middleware",
-                "psr",
-                "psr-7",
-                "zend-expressive",
-                "zf"
-            ],
-            "time": "2018-06-05T15:28:00+00:00"
         }
     ],
     "packages-dev": [
@@ -693,6 +790,55 @@
                 "package versions"
             ],
             "time": "2017-11-30T22:02:29+00:00"
+        },
+        {
+            "name": "laminas/laminas-coding-standard",
+            "version": "2.0.0alpha1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-coding-standard.git",
+                "reference": "87843aa6167938af40cb8ad626c00f3cc3cdfa59"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-coding-standard/zipball/87843aa6167938af40cb8ad626c00f3cc3cdfa59",
+                "reference": "87843aa6167938af40cb8ad626c00f3cc3cdfa59",
+                "shasum": ""
+            },
+            "require": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+                "laminas/laminas-zendframework-bridge": "^1.0",
+                "php": "^7.1",
+                "slevomat/coding-standard": "^4.8.0",
+                "squizlabs/php_codesniffer": "^3.3.2",
+                "webimpress/coding-standard": "dev-master"
+            },
+            "replace": {
+                "zendframework/zend-coding-standard": "self.version"
+            },
+            "type": "phpcodesniffer-standard",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev",
+                    "dev-develop": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaminasCodingStandard\\": "src/LaminasCodingStandard/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Laminas Coding Standard",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "Coding Standard",
+                "laminas"
+            ],
+            "time": "2019-12-31T16:28:26+00:00"
         },
         {
             "name": "maglnet/composer-require-checker",
@@ -3382,12 +3528,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/webimpress/coding-standard.git",
-                "reference": "98dcc95b81a302130455f369317c865de97f2a2f"
+                "reference": "0ed287fe3c5233323eefccced88b71355ff574fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webimpress/coding-standard/zipball/98dcc95b81a302130455f369317c865de97f2a2f",
-                "reference": "98dcc95b81a302130455f369317c865de97f2a2f",
+                "url": "https://api.github.com/repos/webimpress/coding-standard/zipball/0ed287fe3c5233323eefccced88b71355ff574fe",
+                "reference": "0ed287fe3c5233323eefccced88b71355ff574fe",
                 "shasum": ""
             },
             "require": {
@@ -3395,7 +3541,7 @@
                 "squizlabs/php_codesniffer": "^3.5.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7.5.18 || ^8.5.1"
+                "phpunit/phpunit": "^7.5.20 || ^8.5.2"
             },
             "type": "phpcodesniffer-standard",
             "extra": {
@@ -3419,7 +3565,7 @@
                 "psr-12",
                 "webimpress"
             ],
-            "time": "2019-12-27T15:40:49+00:00"
+            "time": "2020-01-25T13:08:29+00:00"
         },
         {
             "name": "webmozart/glob",
@@ -3512,56 +3658,13 @@
             ],
             "description": "A robust cross-platform utility for normalizing, comparing and modifying file paths.",
             "time": "2015-08-14T11:36:10+00:00"
-        },
-        {
-            "name": "zendframework/zend-coding-standard",
-            "version": "2.0.0-alpha.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zendframework/zend-coding-standard.git",
-                "reference": "182eab986cfbcc8eb097da371720202dfb30a3ae"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-coding-standard/zipball/182eab986cfbcc8eb097da371720202dfb30a3ae",
-                "reference": "182eab986cfbcc8eb097da371720202dfb30a3ae",
-                "shasum": ""
-            },
-            "require": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
-                "php": "^7.1",
-                "slevomat/coding-standard": "^4.8.0",
-                "squizlabs/php_codesniffer": "^3.3.2",
-                "webimpress/coding-standard": "dev-master"
-            },
-            "type": "phpcodesniffer-standard",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev",
-                    "dev-develop": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "ZendCodingStandard\\": "src/ZendCodingStandard"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Zend Framework Coding Standard",
-            "keywords": [
-                "Coding Standard",
-                "ZendFramework",
-                "zf"
-            ],
-            "time": "2018-11-18T13:26:24+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "webimpress/coding-standard": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

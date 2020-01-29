@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\Cors\Service;
+namespace Boesing\Mezzio\Cors\Service;
 
-use Boesing\Expressive\Cors\Configuration\ConfigurationInterface;
+use Boesing\Mezzio\Cors\Configuration\ConfigurationInterface;
 use Fig\Http\Message\RequestMethodInterface as RequestMethod;
 use Psr\Http\Message\UriInterface;
 use Webmozart\Assert\Assert;

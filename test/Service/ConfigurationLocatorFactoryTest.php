@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace Boesing\Expressive\CorsTest\Service;
+namespace Boesing\Mezzio\CorsTest\Service;
 
-use Boesing\Expressive\Cors\Configuration\ConfigurationInterface;
-use Boesing\Expressive\Cors\Configuration\RouteConfigurationFactoryInterface;
-use Boesing\Expressive\Cors\Service\ConfigurationLocator;
-use Boesing\Expressive\Cors\Service\ConfigurationLocatorFactory;
-use Boesing\Expressive\CorsTest\AbstractFactoryTest;
+use Boesing\Mezzio\Cors\Configuration\ConfigurationInterface;
+use Boesing\Mezzio\Cors\Configuration\RouteConfigurationFactoryInterface;
+use Boesing\Mezzio\Cors\Service\ConfigurationLocator;
+use Boesing\Mezzio\Cors\Service\ConfigurationLocatorFactory;
+use Boesing\Mezzio\CorsTest\AbstractFactoryTest;
 use Psr\Http\Message\ServerRequestFactoryInterface;
-use Zend\Expressive\Router\RouterInterface;
+use Mezzio\Router\RouterInterface;
 
 final class ConfigurationLocatorFactoryTest extends AbstractFactoryTest
 {

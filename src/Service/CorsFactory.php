@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\Cors\Service;
+namespace Boesing\Mezzio\Cors\Service;
 
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\UriFactoryInterface;

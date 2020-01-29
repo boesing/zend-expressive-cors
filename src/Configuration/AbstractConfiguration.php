@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\Cors\Configuration;
+namespace Boesing\Mezzio\Cors\Configuration;
 
-use Boesing\Expressive\Cors\Configuration\Exception\InvalidConfigurationException;
-use Boesing\Expressive\Cors\Exception\BadMethodCallException;
+use Boesing\Mezzio\Cors\Configuration\Exception\InvalidConfigurationException;
+use Boesing\Mezzio\Cors\Exception\BadMethodCallException;
 use Webmozart\Assert\Assert;
 
 use function array_unique;

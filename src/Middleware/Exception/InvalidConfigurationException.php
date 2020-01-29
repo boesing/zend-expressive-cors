@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\Cors\Middleware\Exception;
+namespace Boesing\Mezzio\Cors\Middleware\Exception;
 
-use Boesing\Expressive\Cors\Exception\ExceptionInterface;
-use Boesing\Expressive\Cors\Middleware\CorsMiddleware;
+use Boesing\Mezzio\Cors\Exception\ExceptionInterface;
+use Boesing\Mezzio\Cors\Middleware\CorsMiddleware;
 use LogicException;
-use Zend\Expressive\Router\Middleware\DispatchMiddleware;
-use Zend\Expressive\Router\Middleware\RouteMiddleware;
+use Mezzio\Router\Middleware\DispatchMiddleware;
+use Mezzio\Router\Middleware\RouteMiddleware;
 
 use function sprintf;
 

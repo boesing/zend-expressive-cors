@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Boesing\Expressive\CorsTest\Service;
+namespace Boesing\Mezzio\CorsTest\Service;
 
-use Boesing\Expressive\Cors\Service\Cors;
-use Boesing\Expressive\Cors\Service\CorsFactory;
-use Boesing\Expressive\CorsTest\AbstractFactoryTest;
+use Boesing\Mezzio\Cors\Service\Cors;
+use Boesing\Mezzio\Cors\Service\CorsFactory;
+use Boesing\Mezzio\CorsTest\AbstractFactoryTest;
 use Psr\Http\Message\UriFactoryInterface;
 
 final class CorsFactoryTest extends AbstractFactoryTest

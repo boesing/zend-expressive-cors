@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\Cors\Service;
+namespace Boesing\Mezzio\Cors\Service;
 
-use Boesing\Expressive\Cors\Configuration\ConfigurationInterface;
-use Boesing\Expressive\Cors\Configuration\Exception\InvalidConfigurationException;
+use Boesing\Mezzio\Cors\Configuration\ConfigurationInterface;
+use Boesing\Mezzio\Cors\Configuration\Exception\InvalidConfigurationException;
 
 interface ConfigurationLocatorInterface
 {

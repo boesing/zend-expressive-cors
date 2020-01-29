@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\Cors\Service;
+namespace Boesing\Mezzio\Cors\Service;
 
-use Boesing\Expressive\Cors\Exception\InvalidOriginValueException;
+use Boesing\Mezzio\Cors\Exception\InvalidOriginValueException;
 use Fig\Http\Message\RequestMethodInterface;
 use InvalidArgumentException;
 use Psr\Http\Message\ServerRequestInterface;

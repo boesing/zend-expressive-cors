@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Boesing\Expressive\CorsTest\Service;
+namespace Boesing\Mezzio\CorsTest\Service;
 
-use Boesing\Expressive\Cors\Configuration\ConfigurationInterface;
-use Boesing\Expressive\Cors\Service\ResponseFactory;
+use Boesing\Mezzio\Cors\Configuration\ConfigurationInterface;
+use Boesing\Mezzio\Cors\Service\ResponseFactory;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;

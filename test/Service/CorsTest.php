@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Boesing\Expressive\CorsTest\Service;
+namespace Boesing\Mezzio\CorsTest\Service;
 
-use Boesing\Expressive\Cors\Exception\InvalidOriginValueException;
-use Boesing\Expressive\Cors\Service\Cors;
+use Boesing\Mezzio\Cors\Exception\InvalidOriginValueException;
+use Boesing\Mezzio\Cors\Service\Cors;
 use InvalidArgumentException;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;

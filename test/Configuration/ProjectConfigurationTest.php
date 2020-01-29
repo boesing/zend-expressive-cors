@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\CorsTest\Configuration;
+namespace Boesing\Mezzio\CorsTest\Configuration;
 
-use Boesing\Expressive\Cors\Configuration\Exception\InvalidConfigurationException;
-use Boesing\Expressive\Cors\Configuration\ProjectConfiguration;
+use Boesing\Mezzio\Cors\Configuration\Exception\InvalidConfigurationException;
+use Boesing\Mezzio\Cors\Configuration\ProjectConfiguration;
 use PHPUnit\Framework\TestCase;
 
 use function lcfirst;

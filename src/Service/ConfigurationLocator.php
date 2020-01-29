@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\Cors\Service;
+namespace Boesing\Mezzio\Cors\Service;
 
-use Boesing\Expressive\Cors\Configuration\ConfigurationInterface;
-use Boesing\Expressive\Cors\Configuration\RouteConfigurationFactoryInterface;
-use Boesing\Expressive\Cors\Configuration\RouteConfigurationInterface;
+use Boesing\Mezzio\Cors\Configuration\ConfigurationInterface;
+use Boesing\Mezzio\Cors\Configuration\RouteConfigurationFactoryInterface;
+use Boesing\Mezzio\Cors\Configuration\RouteConfigurationInterface;
+use Mezzio\Router\Route;
+use Mezzio\Router\RouteResult;
+use Mezzio\Router\RouterInterface;
 use Psr\Http\Message\ServerRequestFactoryInterface;
-use Zend\Expressive\Router\Route;
-use Zend\Expressive\Router\RouteResult;
-use Zend\Expressive\Router\RouterInterface;
 
 use function array_diff;
 use function array_merge;

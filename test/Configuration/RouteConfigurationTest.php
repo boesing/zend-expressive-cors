@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\CorsTest\Configuration;
+namespace Boesing\Mezzio\CorsTest\Configuration;
 
-use Boesing\Expressive\Cors\Configuration\ConfigurationInterface;
-use Boesing\Expressive\Cors\Configuration\ProjectConfiguration;
-use Boesing\Expressive\Cors\Configuration\RouteConfiguration;
+use Boesing\Mezzio\Cors\Configuration\ConfigurationInterface;
+use Boesing\Mezzio\Cors\Configuration\ProjectConfiguration;
+use Boesing\Mezzio\Cors\Configuration\RouteConfiguration;
 use function in_array;
 use PHPUnit\Framework\TestCase;
 

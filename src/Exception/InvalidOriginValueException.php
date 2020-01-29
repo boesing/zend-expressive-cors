@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\Cors\Exception;
+namespace Boesing\Mezzio\Cors\Exception;
 
 use RuntimeException;
 use Throwable;

@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Boesing\Expressive\CorsTest\Configuration;
+namespace Boesing\Mezzio\CorsTest\Configuration;
 
-use Boesing\Expressive\Cors\Configuration\RouteConfigurationFactory;
-use Boesing\Expressive\Cors\Configuration\RouteConfigurationFactoryFactory;
-use Boesing\Expressive\CorsTest\AbstractFactoryTest;
+use Boesing\Mezzio\Cors\Configuration\RouteConfigurationFactory;
+use Boesing\Mezzio\Cors\Configuration\RouteConfigurationFactoryFactory;
+use Boesing\Mezzio\CorsTest\AbstractFactoryTest;
 
 final class RouteConfigurationFactoryFactoryTest extends AbstractFactoryTest
 {

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Boesing\Expressive\CorsTest;
+namespace Boesing\Mezzio\CorsTest;
 
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;

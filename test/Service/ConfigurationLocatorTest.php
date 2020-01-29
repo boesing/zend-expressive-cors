@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\CorsTest\Service;
+namespace Boesing\Mezzio\CorsTest\Service;
 
-use Boesing\Expressive\Cors\Configuration\ConfigurationInterface;
-use Boesing\Expressive\Cors\Configuration\RouteConfigurationFactoryInterface;
-use Boesing\Expressive\Cors\Configuration\RouteConfigurationInterface;
-use Boesing\Expressive\Cors\Service\ConfigurationLocator;
-use Boesing\Expressive\Cors\Service\CorsMetadata;
+use Boesing\Mezzio\Cors\Configuration\ConfigurationInterface;
+use Boesing\Mezzio\Cors\Configuration\RouteConfigurationFactoryInterface;
+use Boesing\Mezzio\Cors\Configuration\RouteConfigurationInterface;
+use Boesing\Mezzio\Cors\Service\ConfigurationLocator;
+use Boesing\Mezzio\Cors\Service\CorsMetadata;
 use Fig\Http\Message\RequestMethodInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -16,8 +16,8 @@ use Psr\Http\Message\ServerRequestFactoryInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\UriInterface;
 use function strpos;
-use Zend\Expressive\Router\RouteResult;
-use Zend\Expressive\Router\RouterInterface;
+use Mezzio\Router\RouteResult;
+use Mezzio\Router\RouterInterface;
 use function array_diff;
 use function array_fill;
 use function array_merge;

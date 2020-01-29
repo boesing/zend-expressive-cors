@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/boesing/zend-expressive-cors.svg?branch=master)](https://travis-ci.org/boesing/zend-expressive-cors)
 [![Coverage Status](https://coveralls.io/repos/github/boesing/zend-expressive-cors/badge.svg?branch=master)](https://coveralls.io/github/boesing/zend-expressive-cors?branch=master)
 
-CORS subcomponent for [Expressive](https://github.com/zendframework/zend-expressive).
+CORS subcomponent for [Expressive](https://github.com/mezzio/mezzio).
 
 
 This extension creates CORS details for your application. If the `CorsMiddleware` detects a `CORS preflight`, the middleware will start do detect the proper `CORS` configuration.
@@ -70,7 +70,7 @@ The parameter `explicit` tells the `ConfigurationLocator` to stop trying other r
 <?php
 declare(strict_types=1);
 
-use Boesing\Expressive\Cors\Configuration\ConfigurationInterface;
+use Boesing\Mezzio\Cors\Configuration\ConfigurationInterface;
 
 return [
     ConfigurationInterface::CONFIGURATION_IDENTIFIER => [
@@ -88,7 +88,7 @@ return [
 <?php
 declare(strict_types=1);
 
-use Boesing\Expressive\Cors\Configuration\ConfigurationInterface;
+use Boesing\Mezzio\Cors\Configuration\ConfigurationInterface;
 
 return [
     ConfigurationInterface::CONFIGURATION_IDENTIFIER => [
@@ -108,8 +108,8 @@ return [
 <?php
 declare(strict_types=1);
 
-use Boesing\Expressive\Cors\Configuration\ConfigurationInterface;
-use Boesing\Expressive\Cors\Configuration\RouteConfigurationInterface;
+use Boesing\Mezzio\Cors\Configuration\ConfigurationInterface;
+use Boesing\Mezzio\Cors\Configuration\RouteConfigurationInterface;
 
 return [
     ConfigurationInterface::CONFIGURATION_IDENTIFIER => [
@@ -170,8 +170,8 @@ Result of this configuration for the `CORS preflight` of `/foo` for the upcoming
 <?php
 declare(strict_types=1);
 
-use Boesing\Expressive\Cors\Configuration\ConfigurationInterface;
-use Boesing\Expressive\Cors\Configuration\RouteConfigurationInterface;
+use Boesing\Mezzio\Cors\Configuration\ConfigurationInterface;
+use Boesing\Mezzio\Cors\Configuration\RouteConfigurationInterface;
 
 return [
     ConfigurationInterface::CONFIGURATION_IDENTIFIER => [

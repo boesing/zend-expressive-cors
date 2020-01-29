@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\Cors\Configuration\Exception;
+namespace Boesing\Mezzio\Cors\Configuration\Exception;
 
-use Boesing\Expressive\Cors\Exception\AbstractInvalidArgumentException;
+use Boesing\Mezzio\Cors\Exception\AbstractInvalidArgumentException;
 
 final class InvalidConfigurationException extends AbstractInvalidArgumentException
 {

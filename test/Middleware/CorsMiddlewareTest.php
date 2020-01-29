@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\CorsTest\Middleware;
+namespace Boesing\Mezzio\CorsTest\Middleware;
 
-use Boesing\Expressive\Cors\Configuration\ConfigurationInterface;
-use Boesing\Expressive\Cors\Configuration\RouteConfigurationInterface;
-use Boesing\Expressive\Cors\Middleware\CorsMiddleware;
-use Boesing\Expressive\Cors\Middleware\Exception\InvalidConfigurationException;
-use Boesing\Expressive\Cors\Service\ConfigurationLocatorInterface;
-use Boesing\Expressive\Cors\Service\CorsInterface;
-use Boesing\Expressive\Cors\Service\CorsMetadata;
-use Boesing\Expressive\Cors\Service\ResponseFactoryInterface;
+use Boesing\Mezzio\Cors\Configuration\ConfigurationInterface;
+use Boesing\Mezzio\Cors\Configuration\RouteConfigurationInterface;
+use Boesing\Mezzio\Cors\Middleware\CorsMiddleware;
+use Boesing\Mezzio\Cors\Middleware\Exception\InvalidConfigurationException;
+use Boesing\Mezzio\Cors\Service\ConfigurationLocatorInterface;
+use Boesing\Mezzio\Cors\Service\CorsInterface;
+use Boesing\Mezzio\Cors\Service\CorsMetadata;
+use Boesing\Mezzio\Cors\Service\ResponseFactoryInterface;
 use Fig\Http\Message\RequestMethodInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -19,7 +19,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\UriInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\Expressive\Router\RouteResult;
+use Mezzio\Router\RouteResult;
 
 final class CorsMiddlewareTest extends TestCase
 {

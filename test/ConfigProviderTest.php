@@ -2,26 +2,26 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\CorsTest;
+namespace Boesing\Mezzio\CorsTest;
 
-use Boesing\Expressive\Cors\ConfigProvider;
-use Boesing\Expressive\Cors\Configuration\ConfigurationInterface;
-use Boesing\Expressive\Cors\Configuration\ProjectConfiguration;
-use Boesing\Expressive\Cors\Configuration\ProjectConfigurationFactory;
-use Boesing\Expressive\Cors\Configuration\RouteConfigurationFactory;
-use Boesing\Expressive\Cors\Configuration\RouteConfigurationFactoryFactory;
-use Boesing\Expressive\Cors\Configuration\RouteConfigurationFactoryInterface;
-use Boesing\Expressive\Cors\Middleware\CorsMiddleware;
-use Boesing\Expressive\Cors\Middleware\CorsMiddlewareFactory;
-use Boesing\Expressive\Cors\Service\ConfigurationLocator;
-use Boesing\Expressive\Cors\Service\ConfigurationLocatorFactory;
-use Boesing\Expressive\Cors\Service\ConfigurationLocatorInterface;
-use Boesing\Expressive\Cors\Service\Cors;
-use Boesing\Expressive\Cors\Service\CorsFactory;
-use Boesing\Expressive\Cors\Service\CorsInterface;
-use Boesing\Expressive\Cors\Service\ResponseFactory;
-use Boesing\Expressive\Cors\Service\ResponseFactoryFactory;
-use Boesing\Expressive\Cors\Service\ResponseFactoryInterface;
+use Boesing\Mezzio\Cors\ConfigProvider;
+use Boesing\Mezzio\Cors\Configuration\ConfigurationInterface;
+use Boesing\Mezzio\Cors\Configuration\ProjectConfiguration;
+use Boesing\Mezzio\Cors\Configuration\ProjectConfigurationFactory;
+use Boesing\Mezzio\Cors\Configuration\RouteConfigurationFactory;
+use Boesing\Mezzio\Cors\Configuration\RouteConfigurationFactoryFactory;
+use Boesing\Mezzio\Cors\Configuration\RouteConfigurationFactoryInterface;
+use Boesing\Mezzio\Cors\Middleware\CorsMiddleware;
+use Boesing\Mezzio\Cors\Middleware\CorsMiddlewareFactory;
+use Boesing\Mezzio\Cors\Service\ConfigurationLocator;
+use Boesing\Mezzio\Cors\Service\ConfigurationLocatorFactory;
+use Boesing\Mezzio\Cors\Service\ConfigurationLocatorInterface;
+use Boesing\Mezzio\Cors\Service\Cors;
+use Boesing\Mezzio\Cors\Service\CorsFactory;
+use Boesing\Mezzio\Cors\Service\CorsInterface;
+use Boesing\Mezzio\Cors\Service\ResponseFactory;
+use Boesing\Mezzio\Cors\Service\ResponseFactoryFactory;
+use Boesing\Mezzio\Cors\Service\ResponseFactoryInterface;
 use PHPUnit\Framework\TestCase;
 
 final class ConfigProviderTest extends TestCase

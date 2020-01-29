@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\Cors\Middleware;
+namespace Boesing\Mezzio\Cors\Middleware;
 
-use Boesing\Expressive\Cors\Service\ConfigurationLocatorInterface;
-use Boesing\Expressive\Cors\Service\CorsInterface;
-use Boesing\Expressive\Cors\Service\ResponseFactoryInterface;
+use Boesing\Mezzio\Cors\Service\ConfigurationLocatorInterface;
+use Boesing\Mezzio\Cors\Service\CorsInterface;
+use Boesing\Mezzio\Cors\Service\ResponseFactoryInterface;
 use Psr\Container\ContainerInterface;
 
 final class CorsMiddlewareFactory

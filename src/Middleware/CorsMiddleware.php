@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\Cors\Middleware;
+namespace Boesing\Mezzio\Cors\Middleware;
 
-use Boesing\Expressive\Cors\Middleware\Exception\InvalidConfigurationException;
-use Boesing\Expressive\Cors\Service\ConfigurationLocatorInterface;
-use Boesing\Expressive\Cors\Service\CorsInterface;
-use Boesing\Expressive\Cors\Service\CorsMetadata;
-use Boesing\Expressive\Cors\Service\ResponseFactoryInterface;
+use Boesing\Mezzio\Cors\Middleware\Exception\InvalidConfigurationException;
+use Boesing\Mezzio\Cors\Service\ConfigurationLocatorInterface;
+use Boesing\Mezzio\Cors\Service\CorsInterface;
+use Boesing\Mezzio\Cors\Service\CorsMetadata;
+use Boesing\Mezzio\Cors\Service\ResponseFactoryInterface;
+use Mezzio\Router\RouteResult;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\Expressive\Router\RouteResult;
 
 use function preg_match;
 

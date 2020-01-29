@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\Cors\Configuration;
+namespace Boesing\Mezzio\Cors\Configuration;
 
-use Boesing\Expressive\Cors\Service\CorsMetadata;
+use Boesing\Mezzio\Cors\Service\CorsMetadata;
 use Webmozart\Assert\Assert;
 
 use function array_merge;

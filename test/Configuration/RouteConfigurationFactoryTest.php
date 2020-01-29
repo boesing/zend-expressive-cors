@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Boesing\Expressive\CorsTest\Configuration;
+namespace Boesing\Mezzio\CorsTest\Configuration;
 
-use Boesing\Expressive\Cors\Configuration\RouteConfigurationFactory;
-use Boesing\Expressive\Cors\Configuration\RouteConfigurationInterface;
+use Boesing\Mezzio\Cors\Configuration\RouteConfigurationFactory;
+use Boesing\Mezzio\Cors\Configuration\RouteConfigurationInterface;
 use PHPUnit\Framework\TestCase;
 
 final class RouteConfigurationFactoryTest extends TestCase

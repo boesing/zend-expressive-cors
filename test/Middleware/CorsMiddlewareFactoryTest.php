@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace Boesing\Expressive\CorsTest\Middleware;
+namespace Boesing\Mezzio\CorsTest\Middleware;
 
-use Boesing\Expressive\Cors\Middleware\CorsMiddleware;
-use Boesing\Expressive\Cors\Middleware\CorsMiddlewareFactory;
-use Boesing\Expressive\Cors\Service\ConfigurationLocatorInterface;
-use Boesing\Expressive\Cors\Service\CorsInterface;
-use Boesing\Expressive\Cors\Service\ResponseFactoryInterface;
-use Boesing\Expressive\CorsTest\AbstractFactoryTest;
+use Boesing\Mezzio\Cors\Middleware\CorsMiddleware;
+use Boesing\Mezzio\Cors\Middleware\CorsMiddlewareFactory;
+use Boesing\Mezzio\Cors\Service\ConfigurationLocatorInterface;
+use Boesing\Mezzio\Cors\Service\CorsInterface;
+use Boesing\Mezzio\Cors\Service\ResponseFactoryInterface;
+use Boesing\Mezzio\CorsTest\AbstractFactoryTest;
 
 final class CorsMiddlewareFactoryTest extends AbstractFactoryTest
 {

@@ -5,7 +5,7 @@
     "keywords": [
         "expressive",
         "cors",
-        "zend-expressive"
+        "mezzio"
     ],
     "license": "BSD-3-Clause",
     "authors": [
@@ -22,8 +22,8 @@
         "psr/http-message": "^1.0",
         "psr/http-server-handler": "^1.0",
         "psr/http-server-middleware": "^1.0",
-        "webmozart/assert": "^1.5",
-        "zendframework/zend-expressive-router": "^3.1"
+        "mezzio/mezzio-router": "^3.1",
+        "webmozart/assert": "^1.5"
     },
     "require-dev": {
         "maglnet/composer-require-checker": "^2.0",
@@ -32,7 +32,7 @@
         "phpstan/phpstan-phpunit": "^0.11.2",
         "phpstan/phpstan-webmozart-assert": "^0.11.3",
         "phpunit/phpunit": "^8.5",
-        "zendframework/zend-coding-standard": "^2.0"
+        "laminas/laminas-coding-standard": "^2.0"
     },
     "config": {
         "preferred-install": "dist",
@@ -40,17 +40,17 @@
     },
     "extra": {
         "zf": {
-            "config-provider": "Boesing\\Expressive\\Cors\\ConfigProvider"
+            "config-provider": "Boesing\\Mezzio\\Cors\\ConfigProvider"
         }
     },
     "autoload": {
         "psr-4": {
-            "Boesing\\Expressive\\Cors\\": "src"
+            "Boesing\\Mezzio\\Cors\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Boesing\\Expressive\\CorsTest\\": "test"
+            "Boesing\\Mezzio\\CorsTest\\": "test"
         }
     },
     "minimum-stability": "dev",

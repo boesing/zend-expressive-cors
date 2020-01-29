@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Boesing\Expressive\Cors\Configuration;
+namespace Boesing\Mezzio\Cors\Configuration;
 
 final class RouteConfigurationFactory implements RouteConfigurationFactoryInterface
 {
