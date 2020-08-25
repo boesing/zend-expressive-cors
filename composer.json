@@ -38,6 +38,7 @@
         "preferred-install": "dist",
         "sort-packages": true
     },
+    "abandoned": "mezzio/mezzio-cors",
     "extra": {
         "zf": {
             "config-provider": "Boesing\\Expressive\\Cors\\ConfigProvider"
